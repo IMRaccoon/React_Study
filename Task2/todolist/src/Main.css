@@ -1,0 +1,8 @@
+.table {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
