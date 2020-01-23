@@ -5,5 +5,11 @@
 다음은 진행 과제입니다.
 
 - Task 1: [대화형 틱틱토 게임 만들기](https://ko.reactjs.org/tutorial/tutorial.html)
+
   - 이는 React 페이지에 있는 기본 자습서에서 시작된 튜토리얼입니다.
   - 기본 자습서에서 제안하는 추가적인 아이디어까지 구현합니다.
+
+- Task 2: Todo 앱 만들기
+
+  - 보편적인 Todo 앱 만들기 입니다.
+  - TypeScript 기반으로 제작합니다.
