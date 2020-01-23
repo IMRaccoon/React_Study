@@ -44,8 +44,15 @@ ul {
 .game {
   display: flex;
   flex-direction: row;
+  background-color: #999;
+  padding: 15px;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+.order {
+  margin-left: 5px;
+  margin-top: 10px;
 }
