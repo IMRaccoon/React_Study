@@ -79,7 +79,6 @@ class Game extends React.Component {
     }
   }
 
-  isAsc = true;
 
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -98,7 +97,7 @@ class Game extends React.Component {
         }]),
         xIsNext: !this.state.xIsNext,
         stepNumber: history.length,
-        isClicked: null
+        isClicked: null,
       });
     }
     else {
@@ -149,8 +148,8 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <button className="order" onClick={this.isAsc = !this.isAsc}>{this.isAsc ? 'Descending' : 'Ascending'}</button>
-          <ol>{this.isAsc ? moves : moves.reverse()}</ol>
+          <button className="order" onClick={() => this.setState({ isAsc: !this.state.isAsc })}>{this.state.isAsc ? 'Descending' : 'Ascending'}</button>
+          <ol>{this.state.isAsc ? moves : moves.reverse()}</ol>
         </div>
       </div >
     );
