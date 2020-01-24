@@ -1,0 +1,42 @@
+.todoInput {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  border-bottom: 1px solid lightgray;
+  align-items: center;
+}
+
+.todoInput > button {
+  width: 5vw;
+  height: 5vw;
+  outline: none;
+  padding: 0 0 0 0;
+  border: 2px solid black;
+  transition-duration: 0.3s;
+  border-radius: 20%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.todoInput > button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.todoInput > input {
+  width: 80%;
+  height: 60%;
+  outline: none;
+  margin: 5px 10px;
+  padding: 0 5px;
+  border: none;
+  border-bottom: 2px solid lightgray;
+  transition: 0.5s;
+  font-size: 15px;
+}
+
+.todoInput > input:focus {
+  border-bottom: 2px solid #555;
+}
