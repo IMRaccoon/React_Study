@@ -20,7 +20,12 @@
     - useRef를 사용 할 땐 Generics 로 타입을 정합니다.
     - useRef를 사용하여 DOM에 대한 정보를 담을 땐, 초깃값을 null 로 설정해야 하고 값을 사용하기 위해서 null 체킹도 해주어야 합니다.
 
-- Task 3: Todo 앱 만들기 (~ing)
+- Task 3: [TypeScript 환경에서 리액트 Context API 제대로 활용하기](https://velog.io/@velopert/typescript-context-api)
+
+  - Context API 다루기
+  - useReducer 다루기
+
+- Task 4: Todo 앱 만들기 (~ing)
 
   - 보편적인 Todo 앱 만들기 입니다.
   - Html과 CSS를 중심으로 만들었습니다.
