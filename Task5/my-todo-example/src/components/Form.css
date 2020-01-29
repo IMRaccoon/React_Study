@@ -3,12 +3,21 @@
 }
 
 .form input {
-  flex: 1; /* 버튼을 뺀 빈 공간을 모두 채워줍니다 */
   font-size: 1.25rem;
-  flex-direction: row;
+  margin-left: 1rem;
   outline: none;
   border: none;
   border-bottom: 1px solid #c5f6fa;
+}
+
+.input-url {
+  float: left;
+  width: 56%;
+}
+
+.input-title {
+  float: left;
+  width: 42%;
 }
 
 .create-button {
@@ -22,6 +31,7 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
+  width: 7%;
 }
 
 .create-button:hover {
