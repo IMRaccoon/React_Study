@@ -1,9 +1,12 @@
 .link-item {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
-  align-items: center; /* 세로 가운데 정렬 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
   transition: all 0.15s;
   user-select: none;
+  text-align: center;
+  color: #0B2559
 }
 
 .link-item div {
@@ -15,6 +18,12 @@
   user-select: none;
   float: left;
   width: 50%;
+  color: #6f8ca6;
+}
+
+.item-url:hover {
+  color: #0b2559;
+  text-decoration: underline;
 }
 
 .item-title {
@@ -25,4 +34,24 @@
 .item-count {
   float: left;
   width: 15%;
+}
+
+#list-name {
+  padding: 0.5rem;
+  background-color: #6F8CA6;
+  color: white;
+  text-align: center;
+  font-weight: 200;
+  font-size: larger;
+  user-select: none;
+}
+
+#name-url {
+  color: white;
+  cursor: default;
+}
+
+table {
+  width: 100%;
+  display: inline-block;
 }

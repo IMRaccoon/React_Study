@@ -2,27 +2,39 @@ import React from 'react';
 import './LinkitemList.css';
 
 const LinkitemList = ({ links }) => {
-  const listform = links.map(({ id, url, title, count, checked }) => (
+  return <table><LinkName></LinkName><Listform links={links}></Listform></table>;
+};
+
+const Listform = ({ links }) => {
+  return links.map(({ id, url, title, count }) => (
     <LinkItem
       key={id}
       url={url}
       title={title}
       count={count}
-      checked={checked}
     ></LinkItem>
-  ));
-  return listform;
+  ))
 };
 
-const LinkItem = ({ url, title, count, checked }) => {
-  console.log(url);
+const LinkItem = ({ url, title, count }) => {
   return (
-    <ol className="link-item">
-      <div className="item-url">{url}</div>
-      <div className="item-title">{title}</div>
-      <div className="item-count">{count}</div>
-    </ol>
+    <tr className="link-item">
+      <td className="item-url">{url}</td>
+      <td className="item-title">{title}</td>
+      <td className="item-count">{count}</td>
+    </tr>
   );
 };
+
+
+const LinkName = () => {
+  return (
+    <tr className="link-item" id="list-name">
+      <th className="item-url" id="name-url">url</th>
+      <th className="item-title">title</th>
+      <th className="item-count">count</th>
+    </tr>
+  )
+}
 
 export default LinkitemList;

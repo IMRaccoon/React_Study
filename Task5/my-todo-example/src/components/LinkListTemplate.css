@@ -10,13 +10,12 @@
   font-size: 2.5rem;
   text-align: center;
   font-weight: 100;
-  background: #22b8cf;
+  background: #344F73;
   color: white;
 }
 
 .form-wrapper {
   padding: 1rem;
-  border-bottom: 1px solid #22b8cf;
 }
 
 .url-list-warpper {

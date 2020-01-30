@@ -3,21 +3,21 @@
 }
 
 .form input {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-left: 1rem;
   outline: none;
   border: none;
-  border-bottom: 1px solid #c5f6fa;
+  border-bottom: 1px solid #9BB9BF;
 }
 
 .input-url {
   float: left;
-  width: 56%;
+  width: 60%;
 }
 
 .input-title {
   float: left;
-  width: 42%;
+  width: 33%;
 }
 
 .create-button {
@@ -26,7 +26,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: 1rem;
-  background: #22b8cf;
+  background: #38404e;
   border-radius: 3px;
   color: white;
   font-weight: 600;
@@ -35,5 +35,5 @@
 }
 
 .create-button:hover {
-  background: #3bc9db;
+  background: #7e8798;
 }
