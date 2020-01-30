@@ -58,9 +58,13 @@ class App extends React.Component {
     }
   };
 
+  handleRemove = e => {
+    console.log(e.target)
+  }
+
   render() {
     const { link, title, links } = this.state;
-    const { handleChange, handleCreate, handleKeyPress } = this;
+    const { handleChange, handleCreate, handleKeyPress, handleRemove } = this;
 
     return (
       <LinkListTemplate
@@ -73,7 +77,7 @@ class App extends React.Component {
             onKeyPress={handleKeyPress}
           ></Form>
         }
-        linkList={<LinkitemList links={links}></LinkitemList>}
+        linkList={<LinkitemList links={links} onRemove={handleRemove}></LinkitemList>}
       ></LinkListTemplate>
     );
   }

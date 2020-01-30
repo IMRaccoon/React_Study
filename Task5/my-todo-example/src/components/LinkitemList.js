@@ -1,24 +1,27 @@
 import React from 'react';
 import './LinkitemList.css';
 
-const LinkitemList = ({ links }) => {
-  return <table><LinkName></LinkName><Listform links={links}></Listform></table>;
+const LinkitemList = ({ links, onRemove }) => {
+  return <LinkName links={links} onRemove={onRemove} />
 };
 
-const Listform = ({ links }) => {
+const Listform = ({ links, onRemove }) => {
   return links.map(({ id, url, title, count }) => (
     <LinkItem
       key={id}
+      id={id}
       url={url}
       title={title}
       count={count}
+      onRemove={onRemove}
     ></LinkItem>
   ))
 };
 
-const LinkItem = ({ url, title, count }) => {
+const LinkItem = ({ url, title, count, onRemove, id }) => {
   return (
-    <tr className="link-item">
+    <tr className="list-body">
+      <td className="remove" onClick={() => onRemove(id)} >&times;</td>
       <td className="item-url">{url}</td>
       <td className="item-title">{title}</td>
       <td className="item-count">{count}</td>
@@ -27,13 +30,19 @@ const LinkItem = ({ url, title, count }) => {
 };
 
 
-const LinkName = () => {
+const LinkName = ({ links, onRemove }) => {
   return (
-    <tr className="link-item" id="list-name">
-      <th className="item-url" id="name-url">url</th>
-      <th className="item-title">title</th>
-      <th className="item-count">count</th>
-    </tr>
+    <table className="link-item">
+      <thead id="list-name">
+        <tr>check</tr>
+        <tr className="item-url" id="name-url">url</tr>
+        <tr className="item-title">title</tr>
+        <tr className="item-count">count</tr>
+      </thead>
+      <tbody id="list-body-wrapper">
+        <Listform links={links} onRemove={onRemove}></Listform>
+      </tbody>
+    </table >
   )
 }
 
