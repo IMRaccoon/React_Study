@@ -9,28 +9,6 @@
   display: inline-block;
 }
 
-.item-url {
-  cursor: pointer;
-  user-select: none;
-  float: left;
-  width: 50%;
-  color: #6f8ca6;
-}
-
-.item-url:hover {
-  color: #0b2559;
-  text-decoration: underline;
-}
-
-.item-title {
-  float: left;
-  width: 35%;
-}
-
-.item-count {
-  float: left;
-}
-
 #list-name {
   padding: 0.5rem;
   display: flex;
@@ -42,29 +20,65 @@
   user-select: none;
 }
 
-#list-name>#name-url {
-  color: white;
-  cursor: default;
-  text-decoration: none;
+#list-name>* {
+  margin-left: 1rem;
 }
+
+#list-name>.list-name-url {
+  width: 40%;
+}
+
+#list-name>.list-name-title {
+  width: 20%;
+}
+
+#list-name>.list-name-count {
+  width: 10%
+}
+
 
 #list-body-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-
 #list-body-wrapper>.list-body {
   margin: 1rem;
+  display: flex;
+  align-items: center;
 }
 
+.list-body>* {
+  margin-left: 1rem;
+  float: left;
+}
 
+.list-body>.item-url {
+  cursor: pointer;
+  user-select: none;
+  color: #6f8ca6;
+  width: 45%;
+  word-break: break-all;
+}
+
+.list-body>.item-url:hover {
+  color: #0b2559;
+  text-decoration: underline;
+}
+
+.list-body>.item-title {
+  width: 20%;
+  word-break: break-all;
+}
+
+.list-body>.item-count {
+  width: 10%
+}
 
 .list-body>.remove {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   color: #eaafc4;
   font-weight: 600;
-  float: left;
 }
 
 .list-body>.remove:hover {
