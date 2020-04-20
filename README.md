@@ -26,3 +26,7 @@
   - useReducer 다루기
 
 - Task 4: [Todo 앱 만들기](https://velopert.com/3480)
+
+- Task 5: [혼자서 TODO 만들기]()
+
+- Task 6: [webpack + babel + React + Redux](https://pro-self-studier.tistory.com/115)
