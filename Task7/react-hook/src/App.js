@@ -1,35 +1,47 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
-const useNotification = (title, options) => {
-  if (!('Notification' in window)) {
-    return;
-  }
+import defaultAxios from 'axios';
 
-  const fireNotif = () => {
-    if (Notification.permission !== 'granted') {
-      Notification.requestPermission().then((permission) => {
-        if (permission === 'granted') {
-          new Notification(title, options);
-        } else {
-          return;
-        }
-      });
-    } else {
-      new Notification(title, options);
-    }
+const useAxios = (opts, axiosInstance = defaultAxios) => {
+  const [state, setState] = useState({
+    loading: true,
+    error: null,
+    data: null,
+  });
+
+  const [trigger, setTrigger] = useState(0);
+
+  const refetch = () => {
+    setState({ ...state, loading: true });
+    setTrigger(Date.now());
   };
 
-  return fireNotif;
+  useEffect(() => {
+    if (!opts.url) {
+      return;
+    }
+    axiosInstance(opts)
+      .then((data) => {
+        setState({ ...state, loading: false, data });
+      })
+      .catch((error) => {
+        setState({ ...state, loading: false, error });
+      });
+  }, [trigger]);
+  return { ...state, refetch };
 };
 
 const App = () => {
-  const triggerNotif = useNotification('Can I get Notification', {
-    body: 'I Shit',
+  const { loading, error, data, refetch } = useAxios({
+    url: 'https://yts.am/api/v2/list_movies.json',
   });
+  console.log(`${loading}\n${JSON.stringify(data)}\n${error}\n`);
   return (
     <div className="App">
-      <buttonL onClick={triggerNotif}>Hi</buttonL>
+      <h1>{data && data.status}</h1>
+      <h2>{loading && 'loading'}</h2>
+      <button onClick={refetch}>Refetch</button>
     </div>
   );
 };
