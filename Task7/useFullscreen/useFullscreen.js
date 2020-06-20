@@ -1,7 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './App.css';
-
-const useFullscreen = (callback) => {
+export const useFullscreen = (callback) => {
   const element = useRef();
   const runCallback = (bool) => {
     if (callback && typeof callback === 'function') {
@@ -28,21 +25,3 @@ const useFullscreen = (callback) => {
   };
   return { element, triggerFullScreen, exitFull };
 };
-
-const App = () => {
-  const onFullS = (isFull) => {
-    console.log(isFull ? 'We are full' : 'We are samll');
-  };
-  const { element, triggerFullScreen, exitFull } = useFullscreen(onFullS);
-  return (
-    <div className="App">
-      <div ref={element}>
-        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" />
-        <button onClick={exitFull}>exit fullscrenn</button>
-      </div>
-      <button onClick={triggerFullScreen}>Mae Full Screen</button>
-    </div>
-  );
-};
-
-export default App;
